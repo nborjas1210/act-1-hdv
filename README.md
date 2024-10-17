@@ -1,26 +1,33 @@
-# Proyecto de Visualización con D3.js
+# Dashboard de Ventas - SuperStore
 
-Este proyecto fue creado como parte de la actividad grupal del máster, donde se requiere el desarrollo de un dashboard interactivo para analizar el dataset de ventas de SuperStore.
+Este proyecto proporciona un **Dashboard de Ventas** que permite visualizar y analizar diferentes métricas de una tienda, incluyendo el crecimiento de ventas, retención de clientes, impacto de productos, georreferenciación de clientes, y más.
 
-## Estructura del Proyecto
+## Tabla de Contenidos
+- [Descripción](#descripción)
+- [Características](#características)
+- [Requisitos Previos](#requisitos-previos)
+- [Instalación](#instalación)
+- [Estructura de Archivos](#estructura-de-archivos)
+- [Uso](#uso)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
 
-- `index.html`: Página principal con la estructura HTML.
-- `script.js`: Código en D3.js para cargar y visualizar los datos.
-- `style.css`: Estilos personalizados para los gráficos.
-- `data/`: Contiene el dataset `SuperStore_Sales_dataset.csv`.
-- `img/`: Almacena cualquier imagen de soporte.
-- `lib/`: Biblioteca D3.js para uso local.
-- `docs/`: Contiene el informe final en formato PDF.
+## Descripción
+Este dashboard utiliza datos de ventas de un archivo CSV (`SuperStore_Sales_dataset.csv`) para generar múltiples visualizaciones interactivas. El objetivo es proporcionar un análisis completo del rendimiento de la tienda, incluyendo análisis temporal, georreferenciación, análisis de productos, y más.
 
-## Cómo Ejecutar el Proyecto
+## Características
+- **Crecimiento/Decrecimiento de Ventas:** Gráfico de línea que muestra la variación de ventas mensuales.
+- **Fidelización y Retención de Clientes:** Gráfico de barras que compara clientes nuevos y recurrentes.
+- **Impacto de Productos en Ventas:** Gráfico de barras para los productos más vendidos.
+- **Análisis Temporal:** Gráfico de líneas para observar las ventas por periodo.
+- **Distribución Geográfica de Clientes:** Mapa interactivo que muestra la ubicación de los clientes.
+- **Cantidad y Clase de Servicios:** Gráfico de barras que representa las diferentes clases de servicios y su frecuencia.
 
-1. Abre el archivo `index.html` en tu navegador.
-2. Asegúrate de que el archivo `SuperStore_Sales_dataset.csv` esté ubicado en la carpeta `data/` para que D3.js pueda acceder a los datos.
-3. Revisa los gráficos generados y utiliza los tooltips para explorar la información interactiva.
+## Requisitos Previos
+- Navegador Web
+- [Node.js](https://nodejs.org/) (opcional, si se desea configurar un servidor local para desarrollo)
+- Conexión a Internet para cargar los recursos de Leaflet.js desde el CDN.
 
-## Requisitos
-- Navegador moderno compatible con HTML5 y D3.js.
-- Conexión a internet si estás cargando D3.js desde un CDN.
-
-## Licencia
-Este proyecto es solo para fines educativos y de análisis de datos.
+## Instalación
+1. **Clonar este repositorio:**
+   ```bash
+   git clone https://github.com/tu-usuario/dashboard-superstore.git
