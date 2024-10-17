@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Ventas - SuperStore</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1 style="text-align:center;">Análisis de Ventas de SuperStore</h1>
+
+    <!-- Contenedor para el gráfico de Crecimiento/Decrecimiento de Ventas -->
+    <div id="growthChart" class="chart"></div>
+
+    <!-- Contenedor para el gráfico de Fidelización y Retención de Clientes -->
+    <div id="retentionChart" class="chart"></div>
+
+    <div id="productImpactChart" class="chart"></div>
+
+    <div id="temporalAnalysisChart" class="chart"></div>
+
+    <div id="controls">
+        <div class="control-row">
+            <label for="timePeriod">Seleccione el período:</label>
+            <select id="timePeriod">
+                <option value="monthly">Mensual</option>
+                <option value="quarterly">Trimestral</option>
+                <option value="yearly">Anual</option>
+            </select>
+        </div>
+        <div class="control-row">
+            <label for="startDate">Mes de inicio:</label>
+            <input type="month" id="startDate">
+            
+            <label for="endDate">Mes de fin:</label>
+            <input type="month" id="endDate">
+        </div>
+    </div>
+    <div id="customerVolumeChart" class="chart"></div>
+    
+    <div id="servicesChart" class="chart"></div>
+
+    <!-- Contenedor para el mapa de georreferenciación -->
+    <div id="map" style="width: 100%; height: 500px; margin-top: 20px;"></div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

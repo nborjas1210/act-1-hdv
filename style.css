@@ -1,0 +1,119 @@
+/* Estilo básico para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de los gráficos */
+.chart {
+    margin: 0 auto 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    background-color: lightsteelblue;
+    border-radius: 4px;
+    pointer-events: none;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Barras para la gráfica de fidelización y retención */
+.bar.new {
+    fill: #1f77b4;
+}
+
+.bar.returning {
+    fill: #ff7f0e;
+}
+
+/* Estilo para la leyenda */
+.legend rect {
+    width: 10px;
+    height: 10px;
+}
+
+.legend text {
+    font-size: 12px;
+    text-anchor: start;
+}
+
+/* Estilo del contenedor de controles */
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.control-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#controls label {
+    font-weight: bold;
+}
+
+#controls select,
+#controls input[type="month"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+/* Estilo del gráfico */
+#customerVolumeChart {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.axis-label {
+    font-size: 14px;
+    font-weight: bold;
+    fill: #333;
+}
+
+.bar {
+    fill: #4c89db;
+    stroke: #2b5a9e;
+    stroke-width: 1px;
+}
+
+.bar:hover {
+    fill: #1f77b4;
+}
