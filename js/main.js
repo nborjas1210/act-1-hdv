@@ -6,6 +6,8 @@ import { createTemporalAnalysisChart } from './temporalAnalysisChart.js';
 import { createCustomerVolumeChart } from './customerVolumeChart.js';
 import { createServicesChart } from './servicesChart.js';
 import { createGeolocationChart } from './geolocationChart.js'; // Nuevo archivo para georreferenciación
+import { crearMapa } from './mapa.js'; 
+import { graficaDevolucion } from './devolucion.js'; 
 
 d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     data.forEach((d) => {
@@ -27,5 +29,8 @@ d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     createTemporalAnalysisChart(data);
     createCustomerVolumeChart(data);
     createServicesChart(data);
-    createGeolocationChart(data); // Llamada a la función de georreferenciación
+    //createGeolocationChart(data); // Llamada a la función de georreferenciación
+    crearMapa();
+    graficaDevolucion();
 }).catch(error => console.error("Error al cargar el archivo:", error));
+
