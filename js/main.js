@@ -22,7 +22,7 @@ d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
         d.Latitude = +d.Latitude || null;   // Asume que existen coordenadas de latitud
         d.Longitude = +d.Longitude || null; // Asume que existen coordenadas de longitud
     });
-
+    
     // Cargar gráficos
     createGrowthChart(data);
     createRetentionChart(data);
@@ -34,6 +34,21 @@ d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     crearMapa();
     graficaDevolucion();
     //funcion de satisfaccion de clientes
+    //escucha del evento del mapa
+    // Función para actualizar la gráfica según el estado seleccionado
+    function updateChartForState(selectedState) {
+        // Supón que `data` es tu conjunto de datos y `category` se refiere a la categoría que estás graficando
+        const filteredData = data.filter(d => d.State === selectedState);
+        customerSatisfaction(category, filteredData);  // Esta es tu función original que actualiza la gráfica
+    }
+
+    // Escuchar el evento 'stateSelected' que se emite desde el mapa
+    window.addEventListener("stateSelected", function (event) {
+        const selectedState = event.detail.state;  // Extraer el estado seleccionado
+        console.log("Estado seleccionado:", selectedState);
+        updateChartForState(selectedState);  // Actualizar la gráfica basada en el estado seleccionado
+    });
+
     customerSatisfaction(data);
 }).catch(error => console.error("Error al cargar el archivo:", error));
 

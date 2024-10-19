@@ -12,6 +12,10 @@ h1 {
     margin-bottom: 20px;
 }
 
+h3 {
+    font-style: italic;
+}
+
 /* Estilo para el contenedor de los gráficos */
 .chart {
     margin: 0 auto 40px;

@@ -52,6 +52,26 @@ export function crearMapa() {
                 .attr("fill", d => color(valuemap.get(d.id) || 0))  // Asignar color según las ventas
                 .attr("stroke", "#374fa8")  // Bordes color
                 .attr("d", d3.geoPath())
+                //Itereacción con la tasa de satisfacción
+                .on("mouseover", function (event, d) {
+                    d3.select(this).attr("stroke-width", "2px");
+                    tooltip.transition().duration(200).style("opacity", .9);
+                    tooltip.html(`Estado: ${fipsToStateName[d.id]}<br>Ventas: ${formatCurrency(valuemap.get(d.id) || 0)}`)
+                        .style("left", (event.pageX + 5) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function () {
+                    d3.select(this).attr("stroke-width", "1px");
+                    tooltip.transition().duration(500).style("opacity", 0);
+                })
+                .on("click", function (event, d) {
+                    // Crear y emitir el evento personalizado cuando se hace clic en un estado
+                    const selectedState = fipsToStateName[d.id];
+                    const eventDetail = { state: selectedState };
+                    const customEvent = new CustomEvent("stateSelected", { detail: eventDetail });
+                    window.dispatchEvent(customEvent);  // Emitir el evento globalmente
+                });
+                
             // Definir formato de moneda
             const formatCurrency = d3.format("$,.2f");
         
