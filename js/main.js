@@ -7,6 +7,7 @@ import { createCustomerVolumeChart } from './customerVolumeChart.js';
 import { createServicesChart } from './servicesChart.js';
 import { createGeolocationChart } from './geolocationChart.js'; // Nuevo archivo para georreferenciación
 import { crearMapa } from './mapa.js'; 
+import { customerSatisfaction } from './customerSatisfaction.js';
 import { graficaDevolucion } from './devolucion.js'; 
 
 d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
@@ -32,5 +33,7 @@ d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     //createGeolocationChart(data); // Llamada a la función de georreferenciación
     crearMapa();
     graficaDevolucion();
+    //funcion de satisfaccion de clientes
+    customerSatisfaction(data);
 }).catch(error => console.error("Error al cargar el archivo:", error));
 
