@@ -79,12 +79,12 @@ export function graficaDevolucion() {
                 d3.select("#subCategoryTitle").remove();  // Remover el título existente
             
                 // Agregar nuevo título para la subcategoría
-                d3.select("body").append("h2")
+                d3.select("#devolucion").append("h2")
                     .attr("id", "subCategoryTitle")
                     .text(`Subcategorías más devueltas en ${category}`);
             
                 // Crear nuevo contenedor div con la clase 'chartHorizontal'
-                d3.select("body").append("div")
+                d3.select("#devolucion").append("div")
                     .attr("id", "chart2")
                     .attr("class", "chartHorizontal");  // Aquí agregamos la clase
             
