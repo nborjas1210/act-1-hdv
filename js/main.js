@@ -9,6 +9,7 @@ import { createGeolocationChart } from './geolocationChart.js'; // Nuevo archivo
 import { crearMapa } from './mapa.js'; 
 import { customerSatisfaction } from './customerSatisfaction.js';
 import { graficaDevolucion } from './devolucion.js'; 
+import { gananciasPorTiendas } from './gananciasPorTiendas.js';
 
 d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     data.forEach((d) => {
@@ -32,15 +33,15 @@ d3.csv("data/SuperStore_Sales_dataset.csv").then(function(data) {
     createServicesChart(data);
     //createGeolocationChart(data); // Llamada a la función de georreferenciación
     crearMapa();
-    graficaDevolucion();
     //funcion de satisfaccion de clientes
-    //escucha del evento del mapa
-    // Función para actualizar la gráfica según el estado seleccionado
+    //escucha del evento del mapa -  // Función para actualizar la gráfica según el estado seleccionado
     function updateChartForState(selectedState) {
         // Supón que `data` es tu conjunto de datos y `category` se refiere a la categoría que estás graficando
         const filteredData = data.filter(d => d.State === selectedState);
         customerSatisfaction(category, filteredData);  // Esta es tu función original que actualiza la gráfica
     }
+    graficaDevolucion();
+    gananciasPorTiendas();
 
     // Escuchar el evento 'stateSelected' que se emite desde el mapa
     window.addEventListener("stateSelected", function (event) {

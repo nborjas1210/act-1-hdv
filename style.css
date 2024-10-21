@@ -144,3 +144,15 @@ h3 {
     pointer-events: none;
     opacity: 0;
 }
+        /* Estilo básico para el gráfico */
+        .bar {
+            fill: steelblue;
+        }
+
+        .x-axis text {
+            font-size: 12px;
+        }
+
+        .y-axis text {
+            font-size: 12px;
+        }
