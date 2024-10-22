@@ -50,7 +50,7 @@ export function graficaDevolucion() {
             .data(categoryReturns)
             .enter()
             .append("rect")
-            .attr("class", "bar")
+            .attr("class", "bar pointer")
             .attr("y", d => y1(d.category))  // Posición vertical (categoría)
             .attr("x", 0)  // Las barras comienzan en 0
             .attr("height", y1.bandwidth())  // Ancho de las barras
@@ -63,11 +63,19 @@ export function graficaDevolucion() {
                 tooltip.html(`Categoría: ${d.category}<br/>Devoluciones: ${d.returns}`)
                     .style("left", (event.pageX + 5) + "px")
                     .style("top", (event.pageY - 28) + "px");
+
+                     // Cambiar el color de la barra cuando el mouse esté encima
+                d3.select(this)
+                .style("fill", "orange");  // Cambia el color al pasar el mouse
             })
             .on("mouseout", function(d) {
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
+
+                        // Restablecer el color de la barra cuando el mouse salga
+                d3.select(this)
+                .style("fill", "steelblue");  // Color original
             })
             .on("click", function(event, d) {
                 // Mostrar subcategorías más devueltas

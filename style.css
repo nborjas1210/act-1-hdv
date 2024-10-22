@@ -101,6 +101,11 @@ h3 {
 }
 
 
+.pointer {
+    cursor: pointer; /* Cambia el cursor a una manita */
+}
+
+
 /* Estilo del gráfico */
 #customerVolumeChart {
     background-color: #f9f9f9;
